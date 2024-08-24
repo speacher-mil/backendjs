@@ -24,8 +24,16 @@ const setupSwaggerDocument = (app: INestApplication) => {
 };
 
 (async () => {
+  process.env.TZ = 'Asia/Seoul';
+
   const app = await NestFactory.create(AppModule);
   !IS_PRODUCTION && setupSwaggerDocument(app);
+
+  app.enableCors({
+    origin: ['http://localhost'],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  });
 
   await app.listen(config.PORT);
 })();
