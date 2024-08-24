@@ -60,6 +60,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^2.0.5
         version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(terser@5.31.6))
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       prettier:
         specifier: ^3.0.0
         version: 3.3.3
@@ -1235,6 +1238,10 @@ packages:
   diff@4.0.2:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
+
+  dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
@@ -3873,6 +3880,8 @@ snapshots:
   diff-sequences@29.6.3: {}
 
   diff@4.0.2: {}
+
+  dotenv@16.4.5: {}
 
   eastasianwidth@0.2.0: {}
 
