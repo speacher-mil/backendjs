@@ -32,5 +32,7 @@ export const IS_LOCAL = process.env.NODE_ENV
 
 export const config = {
   NODE_ENV: required<string>('NODE_ENV'),
+  PORT: required<number>('PORT'),
+
   JWT_SECRET: required<string>('JWT_SECRET'),
 };
