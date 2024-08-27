@@ -29,8 +29,10 @@ const setupSwaggerDocument = (app: INestApplication) => {
 
   const app = await NestFactory.create(AppModule);
   app.useGlobalInterceptors(new HttpLoggingInterceptor());
+
   !IS_PRODUCTION && setupSwaggerDocument(app);
 
+  app.getHttpAdapter().getInstance().disable('x-powered-by');
   app.enableCors({
     origin: ['http://localhost'],
     credentials: true,
