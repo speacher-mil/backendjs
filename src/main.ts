@@ -7,7 +7,7 @@ import {
 } from '@nestjs/swagger';
 
 import { AppModule } from '@/AppModule';
-import { IS_PRODUCTION, config } from '@/utils/config';
+import { IS_PRODUCTION, config } from '@/config';
 
 const setupSwaggerDocument = (app: INestApplication) => {
   const config = new DocumentBuilder()
