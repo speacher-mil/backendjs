@@ -8,6 +8,7 @@ import {
 
 import { AppModule } from '@/AppModule';
 import { IS_PRODUCTION, config } from '@/config';
+import { HttpLoggingInterceptor } from '@/shared/interceptors/HttpLoggingInterceptor';
 
 const setupSwaggerDocument = (app: INestApplication) => {
   const config = new DocumentBuilder()
@@ -27,6 +28,7 @@ const setupSwaggerDocument = (app: INestApplication) => {
   process.env.TZ = 'Asia/Seoul';
 
   const app = await NestFactory.create(AppModule);
+  app.useGlobalInterceptors(new HttpLoggingInterceptor());
   !IS_PRODUCTION && setupSwaggerDocument(app);
 
   app.enableCors({
