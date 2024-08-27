@@ -1,5 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
+import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import {
   DocumentBuilder,
   SwaggerCustomOptions,
@@ -8,6 +8,7 @@ import {
 
 import { AppModule } from '@/AppModule';
 import { IS_PRODUCTION, config } from '@/config';
+import { AllExceptionsFilter } from '@/shared/filters/AllExceptionsFilter';
 import { HttpLoggingInterceptor } from '@/shared/interceptors/HttpLoggingInterceptor';
 
 const setupSwaggerDocument = (app: INestApplication) => {
@@ -29,6 +30,7 @@ const setupSwaggerDocument = (app: INestApplication) => {
 
   const app = await NestFactory.create(AppModule);
   app.useGlobalInterceptors(new HttpLoggingInterceptor());
+  app.useGlobalFilters(new AllExceptionsFilter(app.get(HttpAdapterHost)));
 
   !IS_PRODUCTION && setupSwaggerDocument(app);
 
