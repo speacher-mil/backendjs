@@ -5,7 +5,7 @@ import {
   isErr,
   isOk,
   toResult,
-} from '@/shared/core/types/Result';
+} from '@/shared/core/types/result';
 
 describe('Result', () => {
   describe('Helper function', () => {

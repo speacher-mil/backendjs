@@ -1,6 +1,6 @@
 import { beforeEach, expect } from 'vitest';
 
-import { JwtAuthGuard } from '@/auth/guards/JwtAuthGuard';
+import { JwtAuthGuard } from '@/auth/guards/jwt.guard';
 
 describe('JwtAuthGuard', () => {
   let guard: JwtAuthGuard;

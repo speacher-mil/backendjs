@@ -6,10 +6,10 @@ import {
   SwaggerModule,
 } from '@nestjs/swagger';
 
-import { AppModule } from '@/AppModule';
+import { AppModule } from '@/app.module';
 import { IS_PRODUCTION, config } from '@/config';
-import { AllExceptionsFilter } from '@/shared/filters/AllExceptionsFilter';
-import { HttpLoggingInterceptor } from '@/shared/interceptors/HttpLoggingInterceptor';
+import { AllExceptionsFilter } from '@/shared/filters/all-exceptions.filter';
+import { HttpLoggingInterceptor } from '@/shared/interceptors/http-logging.interceptor';
 
 const setupSwaggerDocument = (app: INestApplication) => {
   const config = new DocumentBuilder()
