@@ -6,6 +6,7 @@ import { Purposes } from './entities/purposes.entity';
 
 @Module({
     imports: [TypeOrmModule.forFeature([Purposes])],
+    exports: [PurposesService],
     providers: [PurposesService],
     controllers: [PurposesController],
 })

@@ -4,6 +4,7 @@ import { User } from './entities/users.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { PurposesService } from '@/purposes/purposes.service';
+import { Purposes } from '@/purposes/entities/purposes.entity';
 
 @Injectable()
 export class UsersService {
@@ -21,11 +22,14 @@ export class UsersService {
         const {email, purposes} = userData;
         const user = new User();
         user.email = email;
-        purposes.forEach((purposeId) => {
-            const purpose = this.purposesService.getOne(purposeId)
-            user.purposes.push(purpose)
-        })
-        await this.usersRepository.save(user)
+        const purposeList = await Promise.all(
+            purposes.map( async(purposeId) => {
+                return await this.purposesService.getOne(purposeId)   
+            })
+        )
+        user.purposes = purposeList
+        await this.usersRepository.save(user)  
+        
         return user;
     }
 }

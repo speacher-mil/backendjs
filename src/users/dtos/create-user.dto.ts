@@ -6,5 +6,5 @@ export class CreateUserDto {
 
   @IsOptional()
   @IsString({ each: true })
-  readonly purposes: String[];
+  readonly purposes: Number[];
 }

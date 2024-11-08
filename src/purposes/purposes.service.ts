@@ -13,7 +13,7 @@ export class PurposesService {
         return await this.purposesRepository.find();
     }
 
-    async getOne(id): Promise<Purposes> {
-        return await this.purposesRepository.findOne(id);
+    getOne(id: Number): Promise<Purposes | null> {
+        return this.purposesRepository.findOneBy({id: id});
     }
 }

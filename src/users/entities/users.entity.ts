@@ -11,5 +11,5 @@ export class User {
 
     @ManyToMany(type => Purposes)
     @JoinTable()
-    purposes: Purposes[];
+    purposes: (Purposes | null)[];
 }
