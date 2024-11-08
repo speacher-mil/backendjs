@@ -41,5 +41,5 @@ const setupSwaggerDocument = (app: INestApplication) => {
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   });
 
-  await app.listen(config.PORT);
+  await app.listen(3000);
 })();
