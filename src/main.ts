@@ -8,8 +8,8 @@ import {
 
 import { AppModule } from '@/app.module';
 import { IS_PRODUCTION, config } from '@/config';
-import { AllExceptionsFilter } from '@/shared/filters/allexceptions.filter';
-import { HttpLoggingInterceptor } from '@/shared/interceptors/log.interceptor';
+import { AllExceptionsFilter } from '@/shared/filters/all-exceptions.filter';
+import { HttpLoggingInterceptor } from '@/shared/interceptors/http-logging.interceptor';
 
 const setupSwaggerDocument = (app: INestApplication) => {
   const config = new DocumentBuilder()

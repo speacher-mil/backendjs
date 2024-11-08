@@ -3,7 +3,7 @@ import { REQUEST } from '@nestjs/core';
 import { Test, TestingModule } from '@nestjs/testing';
 import { vi } from 'vitest';
 
-import { AllExceptionsFilter } from '@/shared/filters/allexceptions.filter';
+import { AllExceptionsFilter } from '@/shared/filters/all-exceptions.filter';
 
 const mockHttpAdapterHost = vi.fn().mockImplementation(() => ({
   getRequestUrl: vi.fn(),
