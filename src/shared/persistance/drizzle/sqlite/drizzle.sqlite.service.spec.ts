@@ -16,4 +16,14 @@ describe('DrizzleSqliteService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should return DB', () => {
+    const db = service.getDB({
+      config: {
+        url: ':memory:',
+      },
+    });
+
+    expect(db).toBeDefined();
+  });
 });
