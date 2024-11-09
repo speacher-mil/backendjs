@@ -1,7 +1,7 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
-import { Purposes } from './entities/purposes.entity';
-import { PurposesService } from './purposes.service';
+import { Purposes } from '@/purposes/entities/purposes.entity';
+import { PurposesService } from '@/purposes/purposes.service';
 
 @Controller('purposes')
 export class PurposesController {

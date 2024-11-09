@@ -34,5 +34,11 @@ export const config = {
   NODE_ENV: required<string>('NODE_ENV'),
   PORT: required<number>('PORT'),
 
+  // Persistance
+  MYSQL_HOST: required<string>('MYSQL_HOST'),
+  MYSQL_USERNAME: required<string>('MYSQL_USERNAME'),
+  MYSQL_PASSWORD: required<string>('MYSQL_PASSWORD'),
+  MYSQL_DATABASE: required<string>('MYSQL_DATABASE'),
+
   JWT_SECRET: required<string>('JWT_SECRET'),
 };
