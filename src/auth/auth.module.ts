@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { config } from '@/config';
-import { JwtStrategy } from '@/auth/strategies/jwt.strategy';
+import { PassportModule } from '@nestjs/passport';
 
+import { JwtStrategy } from '@/auth/strategies/jwt.strategy';
+import { config } from '@/config';
 
 @Module({
   imports: [
@@ -11,10 +11,10 @@ import { JwtStrategy } from '@/auth/strategies/jwt.strategy';
     JwtModule.register({
       secret: config.JWT_SECRET,
       signOptions: {
-        expiresIn: '60s'
+        expiresIn: '60s',
       },
-    })
+    }),
   ],
-  providers: [JwtStrategy]
+  providers: [JwtStrategy],
 })
 export class AuthModule {}
