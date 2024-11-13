@@ -2,21 +2,21 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from '@/app.controller';
-
-import { Purposes } from './purposes/entities/purposes.entity';
-import { PurposesModule } from './purposes/purposes.module';
-import { User } from './users/entities/users.entity';
-import { UsersModule } from './users/users.module';
+import { config } from '@/config';
+import { Purposes } from '@/purposes/entities/purposes.entity';
+import { PurposesModule } from '@/purposes/purposes.module';
+import { User } from '@/users/entities/users.entity';
+import { UsersModule } from '@/users/users.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'database-2.chqgag6igsdg.ap-northeast-2.rds.amazonaws.com',
+      host: config.MYSQL_HOST,
       port: 3306,
-      username: 'admin',
-      password: 'djqandyd2024!',
-      database: 'speacherdb',
+      username: config.MYSQL_USERNAME,
+      password: config.MYSQL_PASSWORD,
+      database: config.MYSQL_DATABASE,
       entities: [User, Purposes],
       synchronize: true,
     }),
