@@ -3,10 +3,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from '@/app.controller';
 import { config } from '@/config';
-import { Purposes } from '@/purposes/entities/purposes.entity';
-import { PurposesModule } from '@/purposes/purposes.module';
+import { Purposes } from '@/users/purposes/entities/purposes.entity';
+import { PurposesModule } from '@/users/purposes/purposes.module';
 import { User } from '@/users/entities/users.entity';
 import { UsersModule } from '@/users/users.module';
+import { MailModule } from '@/users/mail/mail.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { UsersModule } from '@/users/users.module';
     }),
     UsersModule,
     PurposesModule,
+    MailModule
   ],
   controllers: [AppController],
   providers: [],

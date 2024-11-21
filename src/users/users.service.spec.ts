@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { PurposesModule } from '@/purposes/purposes.module';
+import { PurposesModule } from '@/users/purposes/purposes.module';
 
 import { UsersService } from './users.service';
 

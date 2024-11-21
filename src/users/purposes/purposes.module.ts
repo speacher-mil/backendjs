@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Purposes } from '@/purposes/entities/purposes.entity';
-import { PurposesController } from '@/purposes/purposes.controller';
-import { PurposesService } from '@/purposes/purposes.service';
+import { Purposes } from '@/users/purposes/entities/purposes.entity';
+import { PurposesController } from '@/users/purposes/purposes.controller';
+import { PurposesService } from '@/users/purposes/purposes.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Purposes])],

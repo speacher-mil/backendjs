@@ -40,5 +40,10 @@ export const config = {
   MYSQL_PASSWORD: required<string>('MYSQL_PASSWORD'),
   MYSQL_DATABASE: required<string>('MYSQL_DATABASE'),
 
+  MAIL_HOST: required<string>('MAIL_HOST'),
+  MAIL_PORT: required<number>('MAIL_PORT'),
+  MAIL_USER: required<string>('MAIL_USER'),
+  MAIL_PASSWORD: required<string>('MAIL_PASSWORD'),
+
   JWT_SECRET: required<string>('JWT_SECRET'),
 };

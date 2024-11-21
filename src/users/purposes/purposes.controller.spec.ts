@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { PurposesController } from '@/purposes/purposes.controller';
+import { PurposesController } from '@/users/purposes/purposes.controller';
 
 describe('PurposesController', () => {
   let controller: PurposesController;

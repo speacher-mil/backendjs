@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import { Purposes } from '@/purposes/entities/purposes.entity';
+import { Purposes } from '@/users/purposes/entities/purposes.entity';
 
 @Entity()
 export class User {
